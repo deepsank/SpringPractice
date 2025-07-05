@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="emplCollections1" class="com.springcorepractice.learning.inversionofcontrol.dependencyinjection.collections.CollectionsEmployee">
+        <!--    Setter injection by value as an attribute to property tag-->
+        <property name="name" value="Radhey"/>
+        <property name="phones" >
+            <list>
+                <value>9595954838</value>
+                <value>9595955644</value>
+                <value>9564663838</value>
+                <null/>
+            </list>
+        </property>
+        <property name="addresses">
+            <set>
+                <value>Barsana</value>
+                <value>Gokul</value>
+                <value>Vrindavan</value>
+            </set>
+        </property>
+        <property name="courses">
+            <map>
+                <entry key="RasLeela" value="manyYears"/>
+                <entry key="Bhakti" value="Infinite"/>
+                <entry key="Nidhivan" value="1years"/>
+            </map>
+        </property>
+    </bean>
+
+
+
+</beans>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean name="employee1" class="com.springcorepractice.learning.inversionofcontrol.dependencyinjection.EmployeeExampleForDI">
+<!--    Setter injection by property-value tags-->
+       <property name="employeeName" >
+           <value>Deepak Kumar Upadhyay</value>
+       </property>
+        <property name="employeeId" >
+            <value>63</value>
+        </property>
+        <property name="age" >
+            <value>25</value>
+        </property>
+    </bean>
+    <bean name="employee2" class="com.springcorepractice.learning.inversionofcontrol.dependencyinjection.EmployeeExampleForDI">
+        <!--    Setter injection by value as an attribute to property tag-->
+        <property name="employeeId" value="1"/>
+        <property name="employeeName" value="Bruce Wayne" />
+        <property name="age" value="40"/>
+    </bean>
+
+
+    <!--    Setter injection by p-namespace -->
+    <bean name="employee3" class="com.springcorepractice.learning.inversionofcontrol.dependencyinjection.EmployeeExampleForDI"
+    p:employeeName="Peter Parker" p:age="35" p:employeeId="2" />
+
+
+
+</beans>
