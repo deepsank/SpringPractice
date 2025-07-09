@@ -22,6 +22,16 @@
         </constructor-arg>
     </bean>
 
+    <bean name="ambiguity" class="com.springcorepractice.learning.inversionofcontrol.dependencyinjection.constructoreinjection.AmbiguityInConstructorInjection">
+    <!--    Ambiguity in constructor-->
+        <!--        <constructor-arg value="15"/>-->
+        <!--        <constructor-arg value="25"/>-->
+
+<!--        Ambiguity removed using the type attribute-->
+        <constructor-arg value="15" type="double"/>
+        <constructor-arg value="25" />
+    </bean>
+
 
 
 </beans>

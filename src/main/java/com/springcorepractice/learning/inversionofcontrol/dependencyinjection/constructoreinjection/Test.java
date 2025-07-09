@@ -10,5 +10,7 @@ public class Test {
         Person p = (Person) context.getBean("person");
         System.out.println(p);
 
+        AmbiguityInConstructorInjection ambiguity = (AmbiguityInConstructorInjection) context.getBean("ambiguity");
+        System.out.println(ambiguity);
     }
 }
