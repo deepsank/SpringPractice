@@ -8,4 +8,8 @@
         <property name="price" value="10"/>
     </bean>
 
+    <bean name="p1" class="com.springcorepractice.learning.inversionofcontrol.lifecycle.PepsiUsingInterface" >
+        <property name="pepsi" value="10"/>
+    </bean>
+
 </beans>

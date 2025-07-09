@@ -12,5 +12,10 @@ public class TestMain {
         System.out.println(samosa);
       /*  ---Regisitering shut down hook method--- */
         context.registerShutdownHook();  // Required to call destroy() method as it doesn't get called automatically without this
+
+        System.out.println("##################################################################");
+        /* -----  Configuration of lifecycle methods using Interfaces  -----*/
+        PepsiUsingInterface p1 = (PepsiUsingInterface) context.getBean("p1");
+        context.registerShutdownHook();
     }
 }
