@@ -12,6 +12,14 @@
         <constructor-arg value="Shaktiman"/>
         <constructor-arg value="40"/>
         <constructor-arg ref="cert"/>
+        <constructor-arg name="friends" type="java.util.List">
+            <list>
+                <value>Batman</value>
+                <value>Spiderman</value>
+                <value>Superman</value>
+                <value>Ironman</value>
+            </list>
+        </constructor-arg>
     </bean>
 
 
