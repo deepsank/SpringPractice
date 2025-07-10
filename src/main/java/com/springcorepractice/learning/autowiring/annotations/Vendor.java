@@ -1,10 +1,12 @@
 package com.springcorepractice.learning.autowiring.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 public class Vendor {
 
     @Autowired  // Can be applied to setter and constructor as well
+    @Qualifier("address2")
     private Address address;
 
     public Address getAddress() {

@@ -10,9 +10,14 @@
 
         <context:annotation-config />
     <!--    byConstructor === Matches type of the ref bean with that in the class definition and then calls constructor-->
-    <bean name="tempaddress" class="com.springcorepractice.learning.autowiring.annotations.Address">
+    <bean name="address1" class="com.springcorepractice.learning.autowiring.annotations.Address">
         <property name="street" value="Balewadi High Street"/>
         <property name="city" value="Pune"/>
+    </bean>
+
+    <bean name="address2" class="com.springcorepractice.learning.autowiring.annotations.Address">
+        <property name="street" value="Delhi High Street"/>
+        <property name="city" value="Delhi"/>
     </bean>
 
     <bean class="com.springcorepractice.learning.autowiring.annotations.Vendor" name="vendor1" />
