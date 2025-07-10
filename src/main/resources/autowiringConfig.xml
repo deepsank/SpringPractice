@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    byName-->
+<!--    <bean name="address" class="com.springcorepractice.learning.autowiring.Address">-->
+<!--        <property name="street" value="Balewadi High Street"/>-->
+<!--        <property name="city" value="Pune"/>-->
+<!--    </bean>-->
+
+<!--    byName -&#45;&#45; matches the ref bean name with that defined in the member variable in vendor class &#45;&#45;&#45;&#45; 'address'-->
+<!--    <bean class="com.springcorepractice.learning.autowiring.Vendor" name="vendor1"-->
+<!--    autowire="byName"/>-->
+
+
+    <!--    byType=== Matches type of the ref bean with that in the class definition-->
+<!--    Will lead to exception if 2 same type of beans are defined here as it confuses the compiler-->
+<!--        <bean name="address1" class="com.springcorepractice.learning.autowiring.Address">-->
+<!--            <property name="street" value="Balewadi High Street"/>-->
+<!--            <property name="city" value="Pune"/>-->
+<!--        </bean>-->
+
+<!--        <bean class="com.springcorepractice.learning.autowiring.Vendor" name="vendor1"-->
+<!--        autowire="byType"/>-->
+<!--In both byName and byType, setter injection is called automatically-->
+
+    <!--    byConstructor === Matches type of the ref bean with that in the class definition and then calls constructor-->
+    <bean name="address" class="com.springcorepractice.learning.autowiring.Address">
+        <property name="street" value="Balewadi High Street"/>
+        <property name="city" value="Pune"/>
+    </bean>
+
+    <bean class="com.springcorepractice.learning.autowiring.Vendor" name="vendor1"
+          autowire="constructor"/>
+
+
+
+
+</beans>
