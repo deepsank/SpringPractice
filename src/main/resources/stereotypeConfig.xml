@@ -21,4 +21,6 @@
         <value>Bengaluru</value>
     </util:list>
 
+    <bean class="com.springcorepractice.learning.stereotype.Teacher" name="teacher" scope="prototype"/>
+
 </beans>
