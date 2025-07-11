@@ -3,12 +3,18 @@ package com.springcorepractice.learning.stereotype;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component("stud")
 public class Student {
     @Value("Deepak Kumar Upadhyay")
     private String studentName;
+
     @Value("Chandausi")
     private String city;
+
+    @Value("#{tempListAddress}")
+    private List<String> addresses;
 
     public String getStudentName() {
         return studentName;
@@ -26,11 +32,20 @@ public class Student {
         this.city = city;
     }
 
+    public List<String> getAddresses() {
+        return addresses;
+    }
+
+    public void setAddresses(List<String> addresses) {
+        this.addresses = addresses;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "studentName='" + studentName + '\'' +
                 ", city='" + city + '\'' +
+                ", addresses=" + addresses +
                 '}';
     }
 }

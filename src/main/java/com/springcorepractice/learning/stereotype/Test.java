@@ -9,5 +9,7 @@ public class Test {
         ApplicationContext context = new ClassPathXmlApplicationContext("stereotypeConfig.xml");
         Student s1 =  context.getBean("stud",Student.class);
         System.out.println(s1);
+        System.out.println(s1.getAddresses());
+        System.out.println(s1.getAddresses().getClass().getName());
     }
 }
