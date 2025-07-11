@@ -15,7 +15,7 @@ public class Student {
     @Value("Chandausi")
     private String city;
 
-    @Value("#{tempListAddress}")
+    @Value("#{tempListAddress}")            // Spring Expression Language --- SpEL
     private List<String> addresses;
 
     public String getStudentName() {
