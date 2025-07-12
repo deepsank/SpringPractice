@@ -4,6 +4,7 @@ import com.springjdbclearning.dao.StudentDao;
 import com.springjdbclearning.dao.impl.StudentDaoImpl;
 import com.springjdbclearning.entity.Student;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -24,14 +25,16 @@ public class App
 //        ApplicationContext context = new FileSystemXmlApplicationContext("src/main/java/com/springjdbclearning/springJdbcConfig.xml");
 
 //        ClassPathXmlApplicationContext --- requires the files to be in classpath, otherwise it is not able to find the file ---- so put it in src/main/resources as this is in classpath
-        ApplicationContext context = new ClassPathXmlApplicationContext("springJdbcConfig.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("springJdbcConfig.xml");
+        /* Using JavaConfig and not xml config */
+        ApplicationContext context = new AnnotationConfigApplicationContext(JDBCJavaConfig.class);
         StudentDao studentDao = context.getBean("studentDao", StudentDao.class);
 
         /* Performing CREATE */
 //        Student s1 = new Student();
-//        s1.setId(4);
-//        s1.setName("Ironman- Tony Stark");
-//        s1.setCity("New York City");
+//        s1.setId(7);
+//        s1.setName("Black Panthe-T’Challa");
+//        s1.setCity("Wakanda");
 //
 //        int result = studentDao.insert(s1);
 //
@@ -41,7 +44,7 @@ public class App
         /* Performing UPDATE */
 //        Student s2 = new Student();
 //        s2.setId(63);
-//        s2.setCity("Chandausi");
+//        s2.setCity("Pune");
 //        s2.setName("Deepak Upadhyay");
 //
 //        int result = studentDao.update(s2);
@@ -50,13 +53,13 @@ public class App
 
 
         /* Performing DELETE */
-//        int result = studentDao.delete(5);
+//        int result = studentDao.delete(7);
 //        System.out.println("Deleted:- "+result);
 
 
         /*  Performing READ ---- Single Row data */
-//        Student s1 = studentDao.getStudent(2);
-//        System.out.println(s1);
+//        Student s2 = studentDao.getStudent(7);
+//        System.out.println(s2);
 
         /*  Performing READ ---- Multiple Row data */
        List<Student> students = studentDao.getAllStudents();
