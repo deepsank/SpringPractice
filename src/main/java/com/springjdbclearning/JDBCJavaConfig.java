@@ -4,6 +4,7 @@ import com.springjdbclearning.dao.StudentDao;
 import com.springjdbclearning.dao.impl.StudentDaoImpl;
 import com.springjdbclearning.entity.Student;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -12,6 +13,7 @@ import javax.sql.DataSource;
 import java.util.List;
 
 @Configuration
+@ComponentScan(basePackages = {"com.springjdbclearning.dao.impl"})
 public class JDBCJavaConfig {
     @Bean(name={"ds"})
     public DataSource getDataSource(){
@@ -29,11 +31,11 @@ public class JDBCJavaConfig {
         jdbcTemplate.setDataSource(getDataSource());
         return jdbcTemplate;
     }
-
-    @Bean(name = {"studentDao"})
-    public StudentDao getStudentDao(){
-        StudentDaoImpl studentDao = new StudentDaoImpl();
-        studentDao.setJdbcTemplate(getJdbcTemplate());
-        return studentDao;
-    }
+/* Working fine below code--- Now commenting it use @Autowiring annotations to inject dependencies automatically */
+//    @Bean(name = {"studentDao"})
+//    public StudentDao getStudentDao(){
+//        StudentDaoImpl studentDao = new StudentDaoImpl();
+//        studentDao.setJdbcTemplate(getJdbcTemplate());
+//        return studentDao;
+//    }
 }
