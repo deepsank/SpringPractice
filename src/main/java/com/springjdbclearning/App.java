@@ -7,6 +7,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.util.List;
+
 /**
  * Hello world!
  *
@@ -52,5 +54,16 @@ public class App
 //        System.out.println("Deleted:- "+result);
 
 
+        /*  Performing READ ---- Single Row data */
+//        Student s1 = studentDao.getStudent(2);
+//        System.out.println(s1);
+
+        /*  Performing READ ---- Multiple Row data */
+       List<Student> students = studentDao.getAllStudents();
+//        System.out.println(students.toString());
+        for(Student student: students){
+            System.out.println(student);
+        }
     }
+
 }
